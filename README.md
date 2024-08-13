@@ -4,7 +4,7 @@
 #         Faculty of Electronic
        Major in Electronic Engineering
        Supervisor : Khim Saokun
-       Member     : Eang Sokheang Leavchum Socheata Reun Keary
+       Member     : Eang Sokheang, Leavchum Socheata, Reun Keary
 # Thesis_All_Prgram_Firmware
 Autonomous Mobile Robot Implementation using Nvidia Xavier NX and Arduino DUE       
 Microprocessor : Nvidia Xavier NX Development Kit 8G       
