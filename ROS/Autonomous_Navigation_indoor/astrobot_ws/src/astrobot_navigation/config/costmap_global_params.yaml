@@ -1,0 +1,16 @@
+# http://wiki.ros.org/costmap_2d/flat
+global_costmap:
+  # The global frame for the costmap to operate in.
+  global_frame: map
+  # The name of the frame for the base link of the robot.
+  robot_base_frame: base_link
+
+  # The frequency in Hz for the map to be updated.
+  update_frequency: 10.0
+  # The frequency in Hz for the map to publish display information.
+  publish_frequency: 10.0
+  transform_tolerance: 0.5
+
+  # Whether or not to use the static map to initialize the costmap.
+  # If the rolling_window parameter is set to true, this parameter must be set to false.
+  static_map: true

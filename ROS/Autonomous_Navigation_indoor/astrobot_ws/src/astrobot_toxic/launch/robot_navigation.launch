@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find astrobot_toxic)/launch/slam.launch" />
+    <!--  ************** gmapping ***************  -->
+    <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" output="screen"/>
+    <!--  ************* Visualisation **************  -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find astrobot_toxic)/rviz/rviz_slam_base_local_planner.rviz" required="true" />
+</launch>

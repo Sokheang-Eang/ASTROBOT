@@ -1,0 +1,19 @@
+<launch>
+    <!-- call_robot_urdf_file_for_display -->
+    <arg name="use_gui" default="false"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder
+        '$(find astrobot_description)/urdf/astrobot.urdf'"/>
+    <!-- Call_robot_joint_state-->
+    <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"
+          if="$(arg use_gui)"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"
+          unless="$(arg use_gui)"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>\
+    <!-- Call_serial_node_for_connect_to_arduino -->
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py">
+		    <param name="port" value="/dev/ttyACM0"/>
+		    <param name="baud" value="115200"/>
+    </node>
+    <!-- Display_and_open_rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d  $(find urdf_tutorial)/rviz/urdf.rviz" required="true"/>
+</launch>

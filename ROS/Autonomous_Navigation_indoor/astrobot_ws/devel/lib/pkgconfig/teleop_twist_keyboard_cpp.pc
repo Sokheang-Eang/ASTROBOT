@@ -1,0 +1,8 @@
+prefix=/home/astro-bot/robot_astro/devel
+
+Name: teleop_twist_keyboard_cpp
+Description: Description of teleop_twist_keyboard_cpp
+Version: 0.0.0
+Cflags: -I/home/astro-bot/robot_astro/src/teleop_twist_keyboard_cpp/src
+Libs: -L${prefix}/lib 
+Requires: roscpp geometry_msgs

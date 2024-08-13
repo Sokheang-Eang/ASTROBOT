@@ -1,0 +1,13 @@
+obstacle_range: 0.5
+raytrace_range: 1.0
+
+footprint: [[-0.40, -0.35], [-0.40, 0.35], [0.40, 0.35], [0.40, -0.35]]
+robot_radius: 0.40
+
+# The radius in meters to which the map inflates obstacle cost values.
+inflation_radius: 0.5
+cost_scaling_factor: 1.0
+
+map_type: costmap
+observation_sources: scan
+scan: {sensor_frame: laser_link, data_type: LaserScan, topic: /scan, marking: true, clearing: true}

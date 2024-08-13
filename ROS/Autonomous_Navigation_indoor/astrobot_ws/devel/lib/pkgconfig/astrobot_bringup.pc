@@ -1,0 +1,8 @@
+prefix=/home/astro-bot/robot_astro/devel
+
+Name: astrobot_bringup
+Description: Description of astrobot_bringup
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

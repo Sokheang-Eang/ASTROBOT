@@ -1,0 +1,19 @@
+# http://wiki.ros.org/costmap_2d/flat
+local_costmap:
+  # The global frame for the costmap to operate in.
+  global_frame: map
+  # The name of the frame for the base link of the robot.
+  robot_base_frame: base_link
+
+  # The frequency in Hz for the map to be updated.
+  update_frequency: 10.0
+  # The frequency in Hz for the map to be publish display information.
+  publish_frequency: 10.0
+  # transform_tolerance:0.5
+  static_map: false
+  rolling_window: true
+  width: 3
+  # The height of the map in meters.
+  height: 3
+  # The resolution of the map in meters/cell.
+  resolution: 0.05

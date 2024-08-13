@@ -1,0 +1,13 @@
+<launch>
+    <!-- Arguments -->
+    <arg name="open_rviz" default="true"/>
+    <arg name="slam_method" default="gmapping"/>
+    <!-- The lua scripts are required for cartographer -->
+    <!-- SLAM: Gmapping, Cartographer, Hector, Karto, Frontier_exploration, RTAB-Map -->
+    <include file="$(find astrobot_slam)/launch/astrobot_$(arg slam_method).launch">
+    </include>
+    <!--  ************* Visualisation **************  -->
+    <group if="$(arg open_rviz)">
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find astrobot_slam)/rviz/slam_gmapping.rviz" required="true" />
+    </group>
+</launch>

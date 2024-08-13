@@ -1,0 +1,8 @@
+prefix=/home/astro-bot/astrobot_ws/install
+
+Name: teleop_twist_keyboard_cpp
+Description: Description of teleop_twist_keyboard_cpp
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp geometry_msgs

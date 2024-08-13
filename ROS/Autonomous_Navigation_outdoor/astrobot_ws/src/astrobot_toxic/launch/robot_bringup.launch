@@ -1,0 +1,20 @@
+<launch>
+    <arg name="use_gui" default="false"/>		
+	<arg name="use_rviz" default="false"/>
+	<!-- Robot Model -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder
+        '$(find astrobot_description)/urdf/astrobot.urdf'"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"
+          if="$(arg use_gui)"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"
+          unless="$(arg use_gui)"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <!-- Call_serial_node -->
+    <node name="serial_node" pkg="rosserial_arduino" type="serial_node.py">
+		    <param name="port" value="/dev/ttyACM0"/>
+		    <param name="baud" value="57600"/>
+    </node>
+    <node name="robot_controller" pkg="astrobot_toxic" type="robot_controller"/>
+    <!-- Include_LidarSensor_launch_file -->
+	<include file="$(find rplidar_ros)/launch/rplidar_s1.launch" />
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/astro-bot/astrobot_ws/install
+
+Name: astrobot_navigation
+Description: Description of astrobot_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/astro-bot/robot_astro/src/openslam_gmapping/gridfastslam/gfs2rec.cpp
+cstring
+-
+iostream
+-
+fstream
+-
+sstream
+-
+vector
+-
+list
+-
+gmapping/utils/point.h
+-
+
+/home/astro-bot/robot_astro/src/openslam_gmapping/include/gmapping/utils/gvalues.h
+values.h
+-
+limits.h
+-
+math.h
+-
+limits
+-
+
+/home/astro-bot/robot_astro/src/openslam_gmapping/include/gmapping/utils/point.h
+assert.h
+-
+math.h
+-
+iostream
+-
+gmapping/utils/gvalues.h
+/home/astro-bot/robot_astro/src/openslam_gmapping/include/gmapping/utils/gmapping/utils/gvalues.h
+

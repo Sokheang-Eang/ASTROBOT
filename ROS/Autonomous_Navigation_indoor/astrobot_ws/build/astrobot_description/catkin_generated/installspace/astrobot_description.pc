@@ -1,0 +1,8 @@
+prefix=/home/astro-bot/robot_astro/install
+
+Name: astrobot_description
+Description: Description of astrobot_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

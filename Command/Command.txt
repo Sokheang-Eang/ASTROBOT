@@ -1,0 +1,9 @@
+# Resource File and ROS env
+# Run Bringup file for connecting full system
+	roslaunch astrobot_toxic robot_bringup.launch
+# Run Slam gmapping for create map
+	roslaunch astrobot_slam astrobot_slam.launch
+# Save map 
+  rosrun map_server map_saver -f $name_map
+# Run Navigation 
+  roslaunch astrobot_navigation astrobot_navigation.launch

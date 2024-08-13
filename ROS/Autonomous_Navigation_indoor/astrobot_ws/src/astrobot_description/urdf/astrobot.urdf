@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="astrobot">
+    <link name="base_footprint"/>
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0.0384243969676342 -0.000169139815693442 0.114503134037928" rpy="0 0 0"/>
+            <mass value="4.69742532711754"/>
+            <inertia
+              ixx="0.101092723026645"
+              ixy="0.000846656192814785"
+              ixz="-0.0110863972187948"
+              iyy="0.133987954455898"
+              iyz="3.51508579736405E-05"
+              izz="0.146871417848623" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/mecanum/base_link.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0 0 0.8 2"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/mecanum/base_link.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 0.0475" rpy="0 0 0"/>
+    </joint>
+    <link name="front_left_wheel">
+        <inertial>
+            <origin xyz="0.25199 0.19957 0.037996" rpy="0 0 0"/>
+            <mass value="0.25039"/>
+            <inertia         
+              ixx="7.8771E-05"
+              ixy="1.3474E-09"
+              ixz="-3.2417E-12"
+              iyy="0.00010793"
+              iyz="-9.8699E-11"
+              izz="7.8771E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="-0.25199 -0.19957 -0.037996" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/mecanum/Front_Lw.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.027450980392156862 0.050980392156862744 0.050980392156862744 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.25199 -0.19957 -0.037996" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/mecanum/Front_Lw.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="front_left_joint" type="continuous">
+        <origin xyz="0.25199 0.19957 0.037996" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="front_left_wheel"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
+        <limit effort="100" velocity="10"/>
+    </joint>
+    <link name="front_right_wheel">
+        <inertial>
+            <origin xyz="0.25204 -0.19898 0.037931" rpy="0 0 0"/>
+            <mass value="0.25047"/>
+            <inertia
+              ixx="7.8794E-05"
+              ixy="-1.3798E-08"
+              ixz="2.5518E-08"
+              iyy="0.00010791"
+              iyz="2.4128E-09"
+              izz="7.8792E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="-0.25204 0.19898 -0.037931" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/mecanum/Front_Rw.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.027450980392156862 0.050980392156862744 0.050980392156862744 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.25204 0.19898 -0.037931" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/mecanum/Front_Rw.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="front_right_joint" type="continuous">
+        <origin xyz="0.25204 -0.19898 0.037931 " rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="front_right_wheel"/>
+        <axis xyz="0 -1 0" rpy="0 0 0"/>
+        <limit effort="100" velocity="10"/>
+    </joint>
+    <link name="back_left_wheel">
+        <inertial>
+            <origin xyz="-0.19234 0.18809 0.037352" rpy="0 0 0"/>
+            <mass value="0.25047"/>
+            <inertia
+              ixx="7.8787E-05"
+              ixy="3.6679E-09"
+              ixz="2.4884E-08"
+              iyy="0.00010791"
+              iyz="-1.3519E-08"
+              izz="7.8799E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0.19234 -0.18809 -0.037352" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/mecanum/Rear_Lw.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.027450980392156862 0.050980392156862744 0.050980392156862744 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.19234 -0.18809 -0.037352" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/mecanum/Rear_Lw.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="back_left_joint" type="continuous">
+        <origin xyz="-0.19234 0.18809 0.037352" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="back_left_wheel"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
+        <limit effort="100" velocity="10"/>
+    </joint>
+    <link name="back_right_wheel">
+        <inertial>
+            <origin xyz="-0.19242 -0.18898 0.037393" rpy="0 0 0"/>
+            <mass value="0.25039"/>
+            <inertia
+              ixx="7.8771E-05"
+              ixy="5.8079E-10"
+              ixz="3.9919E-12"
+              iyy="0.00010793"
+              iyz="1.2198E-09"
+              izz="7.8771E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0.19242 0.18898 -0.037393" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/mecanum/Rear_Rw.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.027450980392156862 0.050980392156862744 0.050980392156862744 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.19242 0.18898 -0.037393" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/mecanum/Rear_Rw.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="back_right_joint" type="continuous">
+        <origin xyz="-0.19242 -0.18898 0.037393" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="back_right_wheel"/>
+        <axis xyz="0 -1 0" rpy="0 0 0"/>
+        <limit effort="100" velocity="10"/>
+    </joint>
+    <link name="laser_link">
+        <inertial>
+            <origin xyz="0.25185 -0.00053424 0.41636" rpy="0 0 0" />
+            <mass value="1.325" />
+            <inertia
+              ixx="0.00060833"
+              ixy="-8.0186E-07"
+              ixz="0.00015821"
+              iyy="0.00095046"
+              iyz="-3.1034E-06"
+              izz="0.0010877" />
+        </inertial>
+        <visual>
+            <origin xyz="-0.25185 0.00053424 -0.41636" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/sensor/lida_sensor.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.027450980392156862 0.050980392156862744 0.050980392156862744 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.25185 0.00053424 -0.41636" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/sensor/lida_sensor.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="laser_joint" type="fixed">
+        <origin xyz="0.25185 -0.00053424 0.41636" rpy="0 0 ${pi}"/>
+        <parent link="base_link"/>
+        <child link="laser_link"/>
+    </joint>
+    <link name="camera_link">
+        <inertial>
+            <origin xyz="0.28364 -0.00043065 0.30036" rpy="0 0 0"/>
+            <mass value="0.10791"/>
+            <inertia 
+              ixx="7.1255E-05"
+              ixy="-1.7847E-08"
+              ixz="4.9298E-08"
+              iyy="7.71E-06"
+              iyz="2.4828E-10"
+              izz="7.0257E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="-0.28364 0.00043065 -0.30036" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/sensor/camera_sensor.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.7 0.7 0.7 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.28364 0.00043065 -0.30036" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://astrobot_description/meshes/sensor/camera_sensor.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="camera_joint" type="fixed">
+        <origin xyz="0.28364 -0.00043065 0.30036" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="camera_link"/>
+    </joint>
+</robot>

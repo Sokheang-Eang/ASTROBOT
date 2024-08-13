@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/astro-bot/robot_astro/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/astro-bot/astrobot_ws/devel/include/**",
+        "/home/astro-bot/astrobot_ws/src/astrobot/include/**",
+        "/home/astro-bot/robot_astro/src/astrobot_bringup/include/**",
+        "/home/astro-bot/robot_astro/src/astrobot_controller/include/**",
+        "/home/astro-bot/robot_astro/src/astrobot_description/include/**",
+        "/home/astro-bot/robot_astro/src/astrobot_toxic/include/**",
+        "/home/astro-bot/robot_astro/src/openslam_gmapping/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-arm64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
