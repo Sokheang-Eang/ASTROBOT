@@ -1,6 +1,5 @@
 #       Phnom Penh 21 November 2023
 # National Polytechnic Insttute of Cambodia 
-# National Polytechnic Institute of Cambodia 
 #         Faculty of Electronic
        Major in Electronic Engineering
        Supervisor : Khim Saokun
